@@ -5,64 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="icon" href="images/tic-tac-toe.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3bfd3ce9e5.js" crossorigin="anonymous"></script>
-    <title>Tick Tack Toe</title>
+    <title>Naughts and Crosses</title>
 </head>
 
 <body>
     <main>
-        <div class="main"></div>
-        <div class="grid">
-            <div class="turn">
-                <i class="fa-solid fa-x turquoise"></i>
-                <p>Player 1 - You're up!</p>
-            </div>
-
-            <!-- Dropdown Menu -->
-            <div class="actions"> <button class="actions-btn">
-                    Actions
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-
-                <div class="options border hidden">
-                    <button>Reset</button>
-                    <button>New Round</button>
+        <div class="main">
+            <div class="grid">
+                <div class="turn turquoise" data-id="turn">
+                    <i class="fa-solid fa-x"></i>
+                    <p>Player 1 - You're up!</p>
                 </div>
 
-            </div>
+                <!-- Dropdown Menu -->
+                <div class="actions"> <button class="actions-btn" data-id="actions-btn">
+                        Actions
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
 
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
-            <div class="square shadow"></div>
+                    <div class="options border hidden" data-id="options">
+                        <button data-id="reset-btn">Reset</button>
+                        <button data-id="newRound-btn">New Round</button>
+                    </div>
+                </div>
 
-            <div class="score shadow" style="background-color: #2b7779">
-                <p>Player 1</p>
-                <span>0 Wins</span>
+                <div id="1" class="square shadow" data-id="square"></div>
+                <div id="2" class="square shadow" data-id="square"></div>
+                <div id="3" class="square shadow" data-id="square"></div>
+                <div id="4" class="square shadow" data-id="square"></div>
+                <div id="5" class="square shadow" data-id="square"></div>
+                <div id="6" class="square shadow" data-id="square"></div>
+                <div id="7" class="square shadow" data-id="square"></div>
+                <div id="8" class="square shadow" data-id="square"></div>
+                <div id="9" class="square shadow" data-id="square"></div>
+
+                <div class="score shadow" style="background-color: #2b7779">
+                    <p>Player 1</p>
+                    <span>0 Wins</span>
+                </div>
+                <div class="score shadow" style="background-color: var(--light-gray)">
+                    <p>Ties</p>
+                    <span>0</span>
+                </div>
+                <div class="score shadow" style="background-color: #DAAA4E">
+                    <p>Player 2</p>
+                    <span>0 Wins</span>
+                </div>
             </div>
-            <div class="score shadow" style="background-color: var(--light-gray)">
-                <p>Ties</p>
-                <span>0</span>
-            </div>
-            <div class="score shadow" style="background-color: var(--yellow)">
-                <p>Player 2</p>
-                <span>0 Wins</span>
-            </div>
-        </div>
         </div>
     </main>
 
     <footer>
-        <button class="homepage">Back to Homepage</button>
+        <button class="homepage" data-id="homeage">Back to Homepage</button>
         <h4 class="name">By Richard Hartley</h4>
     </footer>
 
+    <div class="game-over hidden" data-id="gameOver">
+        <div class="game-over-content">
+            <p data-id="gameOver-text">Player 1 wins!</p>
+            <button data-id="playagain">Play again</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
